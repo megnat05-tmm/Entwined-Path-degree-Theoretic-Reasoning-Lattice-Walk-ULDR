@@ -1,0 +1,9 @@
+UPLOAD TO THE wenPublic BRANCH
+
+1. Extract this ZIP.
+2. Open the wenPublic branch on GitHub.
+3. Choose Add file > Upload files.
+4. Drag the extracted CONTENTS (not the ZIP itself) into the upload area.
+5. Commit directly to wenPublic with: Add public Wen Book of Changes dataset toolkit
+
+This package intentionally excludes the private state engine and exact darkTetra succession.
