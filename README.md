@@ -1,28 +1,73 @@
-# Entwined-Path-degree-Theoretic-Reasoning-Lattice-Walk-ULDR
+# Entwined Path Degree-Theoretic Reasoning — ULDR
 
+A public dataset-interpretation toolkit for lattice walks, replay streams, and geometric visualizations inspired by **Wen's Book of Changes**.
 
- “Discovery is a child’s privilege. I mean the small child, the child who is not afraid to be wrong, to look silly, to not be serious, and to act differently from everyone else. He is also not afraid that the things he is interested in are in bad taste or turn out to be different from his expectations, from what they should be, or rather he is not afraid of what they actually are. He ignores the silent and flawless consensus that is part of the air we breathe – the consensus of all the people who are, or are reputed to be, reasonable.”
- 
-   Alexander Grothendieck... selection from GoodReads
+This repository exposes enough tooling to inspect and render existing datasets without publishing the private state-generation engine or the exact darkTetra succession.
 
+## What is included
 
-   
-   Instructing an after-school math course for 3rd and 4th graders, where they had been expected to dissect areas of irregular-convex-polygons, allowed me to discover the shape that is encoded by the residue of some f(n.) As it happens, if you allow each of f(n) = |3n-2| from {-2,5} to be side lengths of a shape, the shape is in fact a closed, irregular-convex-polygon...
+- Readers for direction-string, coordinate `.walk`, CSV, JSON, and NDJSON datasets
+- Pareto-layer ranking by resonance and numerical response
+- King Wen sequence labels for 64-state replay records
+- Conversion to a neutral geometry/event schema
+- Blender import script for paths and event markers
+- Small sanitized example datasets
 
-"Things keep their secrets--" Heraclitus, an Ancient Greek Philosopher
+## What is intentionally not included
 
-   Once I had discovered it, in a moment of random thinking--I wrote it down and showed the students. They all understood the concept of the shape's encoding. Immediately I began to use this in the world of CS, because I solved a well known puzzle involving lattice-walks (all cases passing.) It is important to remember that the delivery of an idea that is your own, in today's age, is a delicate vessel--just like the attenuated relationship between a student who is disinterested and a professor/teacher who cares. Attached to this repository is some information about this shape, how it gets used as an object in my theoretical view of Computer Science/Data Science. Additionally, samples of pictoral (lattice-walk) and mathematical viewpoints within this theory are provided. These include: tau, recurrence, and other metrics that describe the motility of a particle that exists not in Boltzmann's tubes, but in the projection of Contemporary epistemic action onto our sphere of Computational abilities. Does the shape describe why a solution to this puzzle I solved worked? That is an important question...
+- The full state engine
+- Exact darkTetra succession or transition rules
+- Private candidacy/ejection heuristics
+- Proprietary generation constants and reconstruction logic
+- Personal paths, executables, build artifacts, or raw research dumps
 
+The public boundary is:
 
- A very thorough mathematical and CS-approached solution to the problem of invariance in Lattice-Walks.
+```text
+existing dataset -> normalized event stream -> metrics / ranking -> Blender geometry
+```
 
+not:
 
-provincial_iMap_plusCount_nocv2... : an image that had, as its origin--prior to digital reworking--my face and some aftereffects. Now, with the overlaying of a fairly well-fitted path (it happens to approach the light formed on the cheekbone, and recede into the chin from the entire form,) we have the A,Q,R for pixels... cartesionally. 
+```text
+private state engine -> proprietary succession -> generated walk
+```
 
-provincial_imap_pull.jpeg: an image with limited metrics that is pulled from a well-known Online Videogame, where my own avatar has become the point of dissection. Pixel distances and relative image-information densities are represented by higher dimensional ejection/return methods. This is to say, we project the iMap into a higher dimension or provide a repeat-Epsilon series of repeated returns--and the image becomes more rich. Here, we do not have that--we have the primativization of the latent-architecture capable of launching into these dimensions on purpose--with the right numerical approach. The character/avatar's sword is seen as a large ray in the middle of the image-map. The two "qued" points exist between the sword and a surrounding aura, ultimately between that and surrounding fauna and stone. This is an easy low-res candidate for rich image-density.
+## Quick start
 
-face_provincial_iMap_visage.png: Taken into blender for epsilon_0 folding of the image-processing, python manages to organize the iMap into features that achieve their verticality only through prior-stochastic movement through the shape |3n-2|{-2,5} and its ability to describe closure in lattice-walks. They are moving because they have been affinely-fixed into actual geometric space, as opposed to the inferred reality of a "bug flying on the ceiling" (from Descartes) that would conveniently phase into the world of Computers? With their possibilities and limitations being equally intense? Only carefully parametrizing the field allows for the folding and return of iMap data.
+Requires Python 3.10+ and no third-party packages.
 
-visage_iMap_outlined.png: Features are outlined, and now are symmetrically inferred.
+```bash
+python python/wen_changes.py inspect datasets/sample_replay.ndjson
+python python/wen_changes.py pareto datasets/sample_replay.ndjson -o exports/sample_pareto.ndjson
+python python/wen_changes.py normalize datasets/sample_walk.walk -o exports/sample_geometry.ndjson
+```
 
-fully_realized_iMap_En...: this image contains the same as above, though is mostly aimed at instrumenting techniques for image-analysis that go beyond the impressions of symmetry, and explore invariants.
+To create a Blender-ready bundle:
+
+```bash
+python python/wen_changes.py blender-bundle \
+  datasets/sample_walk.walk \
+  --events datasets/sample_replay.ndjson \
+  -o exports/blender_bundle.json
+```
+
+Then open Blender's **Scripting** workspace, load `blender/import_wen_dataset.py`, set `DATASET_PATH`, and run the script.
+
+## Dataset formats
+
+See [`docs/DATASETS.md`](docs/DATASETS.md) and [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+
+## Terminology
+
+The historical inspiration is described here as **Wen's Book of Changes** or the **King Wen sequence**. This project is an experimental graph-theoretic and geometric interpretation, not an authoritative edition, translation, or oracle.
+
+## Author
+
+**Tim Megna** is a Data Science graduate student at Tufts University. His graduate work has included faculty-guided exploration of dimensionality-reduction methods such as UMAP alongside continuing research in lattice walks, computational geometry, graph-theoretic analysis, and simulation. EPDT and Changes-Sieve reflect his original computational and conceptual influence.
+
+Tufts University and its faculty are not represented as endorsing this independent research repository.
+
+## Repository status
+
+Research software. Schemas may evolve, but the public tools are deliberately kept separate from the private generative engine.

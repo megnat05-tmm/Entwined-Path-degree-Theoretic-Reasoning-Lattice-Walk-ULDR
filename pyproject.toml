@@ -1,0 +1,8 @@
+[project]
+name = "wen-book-of-changes-dataset-tools"
+version = "0.1.0"
+description = "Dataset interpretation and Blender export tools inspired by Wen's Book of Changes"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

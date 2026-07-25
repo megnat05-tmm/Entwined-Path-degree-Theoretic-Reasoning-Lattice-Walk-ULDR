@@ -1,0 +1,43 @@
+# Build products
+build/
+out/
+*.o
+*.obj
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.lib
+
+# IDE/user state
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.VC.db
+*.lnk
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Blender backups and heavy working scenes
+*.blend1
+*.blend2
+
+# Generated output
+exports/
+rendered/
+changes_pareto.ndjson
+
+# Local/private research material
+private/
+internal/
+*darkTetra*
+*succession*
+.env
+.env.*
